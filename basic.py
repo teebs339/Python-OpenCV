@@ -24,7 +24,7 @@ canny = cv.Canny(blurred_img, 123,175)
 # cv.imshow('canny', canny)
 
 # dilating the image
-dilated = cv.dilate(canny, (7,7), iterations= 1 )
+dilated = cv.dilate(canny, (7, 7), iterations= 1 )
 # cv.imshow('dialted', dilated)
 
 # Eroding
@@ -39,4 +39,4 @@ resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 cropped = img[50:250, 200:400]
 cv.imshow('cropped', cropped)
 
-cv.waitKey(0)
+cv.waitKey(0) 
