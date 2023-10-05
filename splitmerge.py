@@ -22,6 +22,8 @@ print(img.shape)
 print(b.shape)
 print(g.shape)
 print(r.shape)
- 
+
+merge = cv.merge([b,g,r])
+cv.imshow('merged image', merge)
 
 cv.waitKey(0)
