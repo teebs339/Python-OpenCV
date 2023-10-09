@@ -7,9 +7,12 @@ def rescaleFrame(frame, scale = 0.6):
 
     return cv.resize(frame, dimensions, interpolation= cv.INTER_AREA)
 
-f_img = cv.imread('Photos/whamen.jpg')
+f_img = cv.imread('Faces Dataset/Post Malone/vbfgcv.jpg')
 img = rescaleFrame(f_img)
 cv.imshow('tea', img)
+
+# rect = cv.rectangle(img,(250,250),(100,400), (0,255,0), -1 )
+# cv.imshow('rect', img)
 
 # we should grayscale the image first
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -19,7 +22,7 @@ gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 haar_cascade = cv.CascadeClassifier('haar_face.xml')
 
-faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=4)
+faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
 
 print(f'Number of faces found = {len(faces_rect)}')
 

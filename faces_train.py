@@ -28,12 +28,13 @@ def create_train():
             img_array = cv.imread(img_path)
             gray = cv.cvtColor(img_array, cv.COLOR_BGR2GRAY)
 
-            faces_react = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
+            faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
 
-            for(x, y, w, h) in faces_react:
+            for (x, y, w, h) in faces_rect:
                 faces_roi = gray[y:y+h, x:x+w]
                 features.append(faces_roi)
                 labels.append(label)
+
 
 create_train()
 
