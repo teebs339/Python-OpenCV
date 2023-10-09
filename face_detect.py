@@ -13,7 +13,7 @@ cv.imshow('tea', img)
 
 # we should grayscale the image first
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-cv.imshow('gray', gray)
+# cv.imshow('gray', gray)
 
 # reading the haar .xml file
 
